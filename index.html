@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?</title>
+    <script>
+        let count = 0; 
+        function toggleDirection() {
+            const noButton = document.querySelector('.nobutton');
+          count = (count + 1) % 3; 
+               noButton.classList.remove('flip', 'flip2', 'flip3');
+            if (count === 0)
+                noButton.classList.add('flip');
+            else if (count === 1)
+                noButton.classList.add('flip2');
+            else
+                noButton.classList.add('flip3');
+
+        
+        }
+
+
+        function handleYesClick() {
+            const image = document.querySelector('img');
+            const paragraph = document.querySelector('p');
+            const yesButton = document.querySelector('.yes');
+            const noButton = document.querySelector('.nobutton');
+            const container = document.querySelector('body');
+
+            image.src = "WhatsApp Video 2024-02-10 at 3.01.00 AM.gif";
+            image.style.borderRadius = "50%";
+            paragraph.textContent = "Thank you";
+            yesButton.style.display = 'none';
+            noButton.style.display = 'none'; 
+            container.style.backgroundImage = "linear-gradient(to right, #870000, #190a05)";
+          
+        }
+    </script>
+    <style>
+        body{
+            background-color: #FFEADD;
+        }
+        img{
+            margin-bottom: 40px;
+        }
+        @font-face {
+    font-family: myFirstFont;
+    src: url(MoonbrightDemo-1GGn2.ttf);
+}
+        .container {
+            width: auto;
+            height: 100vh;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+      
+        }
+        
+         .button {
+            display: flex; 
+            gap: 80px;
+        } 
+        p{
+            font-family: myFirstFont;
+            font-size: 70px;
+            color: #FF6666;
+            text-shadow: -1px 2px 40px rgba(255,0,0,1);
+        }
+
+        button , .yes {
+            font-family: cursive;
+            
+           color:white;
+         background-color: #d53737;
+            text-align: center;
+           font-size: 30px;
+        padding: 10px 50px;
+       
+border-radius: 14px;
+
+
+box-shadow: -14px 2px 40px 13px rgba(255,0,0,0.56);
+-webkit-box-shadow: -14px 2px 40px 13px rgba(255,0,0,0.56);
+-moz-box-shadow: -14px 2px 40px 13px rgba(255,0,0,0.56);
+transition: all 0.3s linear
+
+        }
+        .nobutton{
+            
+
+            color:white;
+            background-color: #d53737;
+             text-align: center;
+           font-size: 30px;
+        padding: 10px 50px;
+       
+border-radius: 14px;
+
+
+box-shadow: -14px 2px 40px 13px rgba(255,0,0,0.56);
+-webkit-box-shadow: -14px 2px 40px 13px rgba(255,0,0,0.56);
+-moz-box-shadow: -14px 2px 40px 13px rgba(255,0,0,0.56);
+
+            transition: all 0.2s linear
+
+        }
+
+        .yes:hover{
+            background-color: #FB3569;
+            cursor: pointer;
+            color: black;
+            scale: 1.8;
+        }
+        .nobutton:hover{
+            background-color:#FB3569;
+            scale: 0.9;
+              color: black;
+              
+        }
+        .flip {
+
+            transform:translate(200px,-300px);
+        }
+        .flip2 {
+            transform:translate(-400px,-300px);
+        }
+        .flip3 {
+            transform:translate(300px,-100px);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <p>Will you be my valentine?</p>
+      
+         <img src="WhatsApp Video 2024-02-10 at 1.14.58 AM.gif" alt="">
+       
+       <div class="button">
+            <button class="yes" type="button"  onclick="handleYesClick()">Yes</button>
+            <button class="nobutton" type="button" onclick="toggleDirection()">No</button>
+   
+        </div>
+    </div>
+</body>
+</html>
